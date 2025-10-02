@@ -1,0 +1,143 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Currículo - Modelo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800&family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+  <style>
+    :root{
+      --accent:#3a2f2a; /* marrom escuro */
+      --paper:#fbfbfb;
+      --muted:#666;
+      --max-width:820px;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;font-family:Inter,system-ui,Arial; background:var(--paper)}
+    .page{
+      max-width:var(--max-width);
+      margin:28px auto;
+      background:linear-gradient(180deg,#ffffff 0%, #fbfbfb 100%);
+      padding:30px; 
+      box-shadow:0 8px 30px rgba(0,0,0,0.08);
+      position:relative;
+    }
+
+    /* top-left decorative triangle */
+    .decor{
+      position:absolute;left:0;top:0;width:160px;height:160px;background:var(--accent);clip-path:polygon(0 0,100% 0,0 100%);border-top-left-radius:6px;
+    }
+
+    .header{
+      display:flex;gap:28px;align-items:center;padding-left:8px; /* leave space for triangle overlap */
+    }
+    .photo-wrap{width:150px;flex:0 0 150px;position:relative;margin-left:12px}
+    .photo{
+      width:150px;height:150px;border-radius:50%;object-fit:cover;border:8px solid #fff;box-shadow:0 6px 18px rgba(0,0,0,0.12)
+    }
+
+    .top-right{
+      flex:1;padding:6px 0 0 0;
+    }
+    h1{
+      margin:0;font-family:Montserrat, Inter;font-size:34px;letter-spacing:-0.5px;color:#111;
+    }
+    .subtitle{color:var(--muted);margin-top:6px;font-size:14px}
+    .contact{margin:12px 0 0 0;display:flex;gap:10px;flex-wrap:wrap;font-size:13px;color:var(--muted)}
+    .contact span{display:inline-flex;align-items:center;gap:8px}
+
+    .main{
+      display:grid;grid-template-columns:1fr;gap:18px;margin-top:22px;padding-top:6px
+    }
+
+    .section{
+      padding:12px 6px;
+    }
+    .section h2{
+      margin:0 0 8px 0;font-family:Montserrat;font-size:18px;color:#111
+    }
+    .section p{margin:6px 0;color:var(--muted);line-height:1.45}
+
+    /* Two-column layout for the body similar to image: left small area contains objective, right bigger contains experience */
+    .body-grid{display:grid;grid-template-columns:220px 1fr;gap:28px}
+    .left-column{padding-left:6px}
+
+    .bold{font-weight:600;color:#111}
+
+    /* footer / formação */
+    .formation{margin-top:8px}
+
+    /* responsive */
+    @media (max-width:720px){
+      .page{padding:18px}
+      .header{flex-direction:column;align-items:flex-start}
+      .photo-wrap{margin-left:0}
+      .body-grid{grid-template-columns:1fr}
+    }
+
+    /* print friendly */
+    @media print{
+      body{background:white}
+      .page{box-shadow:none;margin:0;max-width:100%;}
+      a::after{content:""}
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <div class="decor" aria-hidden="true"></div>
+
+    <header class="header">
+      <div class="photo-wrap">
+        <!-- Substitua o caminho da imagem abaixo pela sua foto. Ex.: /mnt/data/arquivo.png ou caminho relativo -->
+        <img class="photo" src="/mnt/data/Captura de tela 2025-10-02 140459.png" alt="Foto do candidato">
+      </div>
+
+      <div class="top-right">
+        <h1>Yasmin Vitória</h1>
+        <div class="subtitle">Praça Armando Sales de Oliveira, 216 - Santana</div>
+        <div class="contact">
+          <span>✉️ yasminvitoria.santos2506@gmail.com</span>
+          <span>📱 (12) 99656-3805</span>
+        </div>
+      </div>
+    </header>
+
+    <main class="main">
+      <div class="body-grid">
+        <aside class="left-column">
+          <section class="section">
+            <h2>Objetivo</h2>
+            <p class="bold">Vendedora</p>
+          </section>
+
+          <section class="section">
+            <h2>Qualificação Profissional</h2>
+            <p>Excelente capacidade de comunicação, relacionamento interpessoal e ótima agilidade.</p>
+          </section>
+
+          <section class="section formation">
+            <h2>Formação</h2>
+            <p>Em andamento - Curso TI Rede de computadores</p>
+          </section>
+        </aside>
+
+        <section class="section">
+          <h2>Experiência Profissional</h2>
+          <p>Profissional com experiência em informática, com sólido conhecimento em sistemas operacionais Windows, identificação e solução de problemas básicos de conectividade. Facilidade com tecnologia, raciocínio lógico e bom desempenho em ambientes que exigem agilidade e atenção aos detalhes.</p>
+
+          <!-- Exemplo de cartão de experiência (duplicar se necessário) -->
+          <!--
+          <div style="margin-top:12px">
+            <h3 style="margin:0;font-size:15px">Empresa XYZ</h3>
+            <p style="margin:4px 0 0 0;color:var(--muted)">Cargo — Período</p>
+            <p style="margin-top:8px;color:var(--muted)">Descrição das atividades e resultados alcançados.</p>
+          </div>
+          -->
+        </section>
+      </div>
+    </main>
+
+  </div>
+</body>
+</html>
